@@ -16553,9 +16553,9 @@ body {
     transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
   }
   .service.civil .btn{background:rgb(46, 58, 36);}
-  .service.civil .btn:hover{background:#5e1018; transform:translateY(-3px); box-shadow:0 10px 20px rgba(122,22,32,0.35);}
+  .service.civil .btn:hover{background:gray; transform:translateY(-3px); box-shadow:0 10px 20px rgba(122,22,32,0.35);}
   .service.land .btn{background:#2e3a24;}
-  .service.land .btn:hover{background:#212a19; transform:translateY(-3px); box-shadow:0 10px 20px rgba(46,58,36,0.35);}
+  .service.land .btn:hover{background:gray; transform:translateY(-3px); box-shadow:0 10px 20px rgba(46,58,36,0.35);}
   .btn svg{width:16px;height:16px;transition:transform .25s ease;}
   .btn:hover svg{transform:translateX(4px);}
  
