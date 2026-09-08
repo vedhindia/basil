@@ -8287,9 +8287,9 @@ Section Title
   font-size: 14px;
 }
 
-.tabs-box {
+/* .tabs-box {
   max-width: 536px;
-}
+} */
 .tabs-box .tab-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15985,3 +15985,241 @@ body {
         max-height: 280px;
     }
 }
+
+
+/* About Us Page CSS */
+
+.basil-merits {
+    --ink:        #262019;
+    --ink-soft:   #6b6357;
+    --paper:      #EFEADD;
+    --line:       rgba(38,32,25,0.10);
+ 
+    --experience: #9CB25F;
+    --experience-ink: #3c451f;
+    --tech:       #8ebfcc;
+    --tech-ink:   #eaf4f4;
+    --innovation: #E2896B;
+    --innovation-ink: #4a2416;
+    --civil:      #C1904F;
+    --civil-ink:  #3c2a10;
+    --trust:      #E7AC3F;
+    --trust-ink:  #3f2e08;
+ 
+    --hub-a: #211E1B;
+    --hub-b: #45403A;
+    --gold:  #D8A93B;
+ 
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 42px 42px;
+    padding: 5.5rem 1.5rem 6rem;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .basil-merits *, .basil-merits *::before, .basil-merits *::after {
+    box-sizing: border-box;
+  }
+ 
+  .merits-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    position: relative;
+  }
+ 
+  /* ---------- Heading ---------- */
+  .merits-head {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 3.5rem;
+  }
+  .merits-head h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 650;
+    font-size: clamp(2.3rem, 5vw, 3.4rem);
+    line-height: 1.05;
+    margin: 0 0 0.9rem;
+    letter-spacing: -0.01em;
+  }
+  .merits-rule {
+    width: 84px;
+    height: 10px;
+    margin: 0 auto 1.1rem;
+    position: relative;
+  }
+  .merits-rule svg { width: 100%; height: 100%; display: block; }
+  .merits-head p {
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+ 
+  /* ---------- Flower diagram ---------- */
+  .merits-flower {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 4rem;
+  }
+  .flower-stage {
+    position: relative;
+    width: min(94vw, 560px);
+    aspect-ratio: 1 / 1;
+  }
+ 
+  .petal {
+    position: absolute;
+    width: 33%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 560;
+    font-size: clamp(0.72rem, 1.6vw, 0.92rem);
+    line-height: 1.15;
+    padding: 0.6rem;
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0;
+    box-shadow: 0 10px 24px -12px rgba(30,25,15,0.35);
+    transition: transform .45s cubic-bezier(.34,1.4,.64,1), box-shadow .3s ease, filter .3s ease;
+  }
+  .petal svg { width: 30%; height: 30%; }
+  .petal span { display: block; }
+ 
+  .flower-stage.is-visible .petal {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  /* stagger order, set via inline --delay in HTML */
+  .petal { transition-delay: var(--delay, 0s); }
+  .flower-stage:not(.is-visible) .petal { transition-delay: 0s; }
+ 
+  .petal--experience { left: 50%; top: 6%;  background: var(--experience); color: var(--experience-ink); }
+  .petal--tech       { left: 87%; top: 32%; background: var(--tech);       color: var(--tech-ink); }
+  .petal--innovation { left: 71%; top: 79%; background: var(--innovation); color: var(--innovation-ink); }
+  .petal--trust      { left: 29%; top: 79%; background: var(--trust);      color: var(--trust-ink); }
+  .petal--civil      { left: 13%; top: 32%; background: var(--civil);      color: var(--civil-ink); }
+ 
+  .petal:hover, .petal:focus-visible, .petal.is-linked {
+    transform: translate(-50%, -50%) scale(1.08);
+    box-shadow: 0 16px 30px -12px rgba(30,25,15,0.45);
+    z-index: 5;
+  }
+  .petal:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+ 
+  .hub {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 27%;
+    aspect-ratio: 1/1;
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 35% 30%, var(--hub-b), var(--hub-a) 70%);
+    border: 3px solid var(--gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #F1E6C8;
+    z-index: 6;
+    box-shadow: 0 14px 30px -10px rgba(0,0,0,0.5), inset 0 0 0 6px rgba(216,169,59,0.08);
+    transition: transform .5s cubic-bezier(.34,1.4,.64,1), opacity .5s ease;
+  }
+  .flower-stage.is-visible .hub {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .hub svg { width: 34%; height: 34%; margin-bottom: 2px; }
+  .hub b {
+    font-family: 'Fraunces', serif;
+    font-weight: 650;
+    font-size: clamp(0.8rem, 2vw, 1.05rem);
+    letter-spacing: 0.03em;
+  }
+  .hub small {
+    font-size: clamp(0.42rem, 1vw, 0.55rem);
+    letter-spacing: 0.14em;
+    color: #C9BFA0;
+    margin-top: 1px;
+  }
+ 
+  @media (max-width: 620px) {
+    .merits-flower { display: none; }
+  }
+ 
+  /* ---------- Cards ---------- */
+  .merits-cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.4rem;
+  }
+  .card {
+    grid-column: span 2;
+    border-radius: 18px;
+    padding: 1.7rem 1.5rem 1.9rem;
+    position: relative;
+    transition: transform .3s ease, box-shadow .3s ease;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+  }
+  .card:nth-child(4) { grid-column: 2 / span 2; }
+  .card:nth-child(5) { grid-column: 4 / span 2; }
+ 
+  .card.is-linked, .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 34px -18px rgba(30,25,15,0.45);
+  }
+ 
+  .card-icon {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 0.9rem;
+    background: rgba(255,255,255,0.35);
+  }
+  .card-icon svg { width: 55%; height: 55%; }
+ 
+  .card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 650;
+    font-size: 1.15rem;
+    margin: 0 0 0.55rem;
+  }
+  .card p {
+    font-size: 0.93rem;
+    line-height: 1.55;
+    margin: 0;
+  }
+ 
+  .card--experience { background: var(--experience); color: var(--experience-ink); }
+  .card--tech       { background: var(--tech);       color: var(--tech-ink); }
+  .card--innovation { background: var(--innovation); color: var(--innovation-ink); }
+  .card--civil      { background: var(--civil);      color: var(--civil-ink); }
+  .card--trust      { background: var(--trust);      color: var(--trust-ink); }
+ 
+  @media (max-width: 900px) {
+    .merits-cards { grid-template-columns: repeat(2, 1fr); }
+    .card, .card:nth-child(4), .card:nth-child(5) { grid-column: span 1; }
+  }
+  @media (max-width: 520px) {
+    .merits-cards { grid-template-columns: 1fr; }
+    .basil-merits { padding: 3.5rem 1.1rem 4rem; }
+  }
+ 
+  @media (prefers-reduced-motion: reduce) {
+    .petal, .hub, .card { transition: none !important; }
+    .flower-stage .petal, .flower-stage .hub { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+  }
