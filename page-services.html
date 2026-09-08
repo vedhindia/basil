@@ -34,164 +34,31 @@
   <!-- Back-to-top start -->
 
   <!-- Main Header-->
-  <header class="main-header header-style-one">
-    <div class="large-container">
-      <div class="header-lower anim-fade-move" data-delay="0.25">
-        <div class="inner-container">
-          <!-- Main box -->
-          <div class="main-box">
-            <div class="logo-box">
-              <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="Logo" /></a>
-              </div>
-            </div>
-
-            <!--Nav Box-->
-            <div class="nav-outer">
-              <nav class="nav main-menu">
-                <ul class="navigation">
-                  <li class="current dropdown">
-                    <a href="index.html">Home</a>
-                    <ul>
-                      <li><a href="index.html">Home 01</a></li>
-                      <li><a href="index-2.html">Home 02</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown"><a href="#">Pages</a>
-                    <ul>
-                      <li><a href="page-about.html">About</a></li>
-                      <li><a href="page-faq.html">Faq</a></li>
-                      <li><a href="page-pricing.html">Pricing</a></li>
-                      <li class="dropdown"><a href="#">Services</a>
-                        <ul>
-                          <li><a href="page-services.html">Services List</a></li>
-                          <li><a href="page-service-details.html">Services Details</a></li>
-                        </ul>
-                      </li>
-                      <li class="dropdown"><a href="#">Team</a>
-                        <ul>
-                          <li><a href="page-team.html">Team List</a></li>
-                          <li><a href="page-team-details.html">Team Details</a></li>
-                        </ul>
-                      </li>
-                      <li class="dropdown"><a href="#">Shop</a>
-                        <ul>
-                          <li><a href="shop-products.html">Products</a></li>
-                          <li><a href="shop-products-sidebar.html">Products with Sidebar</a></li>
-                          <li><a href="shop-product-details.html">Product Details</a></li>
-                          <li><a href="shop-cart.html">Cart</a></li>
-                          <li><a href="shop-checkout.html">Checkout</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="page-testimonial.html">Testimonials</a></li>
-                      <li><a href="page-404.html">404</a></li>
-                    </ul>
-                  </li>
-                    <li class="dropdown"><a href="#">Project</a>
-                      <ul>
-                        <li><a href="page-projects.html">Project</a></li>
-                        <li><a href="page-project-details.html">Project Details</a></li>
-                      </ul>
-                    </li>
-                  <li class="dropdown"><a href="news-grid.html">Blog</a>
-                    <ul>
-                      <li><a href="news-grid.html">Blog</a></li>
-                      <li><a href="news-details.html">Blog Details</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="page-contact.html">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
-            <div class="right-box">
-              <a class="theme-btn btn-style-one" href="page-contact.html"><span class="btn-title">Get a Quote </span></a>
-              <div class="ui-btn-outer">
-                <button class="ui-btn search-btn"><span class="icon lnr lnr-icon-search"></span></button>
-              </div>
-              <!--Mobile Navigation Toggler-->
-              <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
-            </div>
-          </div>
-        </div>
+     <nav class="navbar">
+      <div class="nav-logo">
+        <img src="images/basil/Basil Logo.png" alt="Basil Developers Logo">
       </div>
-    </div>
-
-    <!-- Mobile Menu  -->
-    <div class="mobile-menu">
-      <div class="menu-backdrop"></div>
-      <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-      <nav class="menu-box">
-        <div class="upper-box">
-          <div class="nav-logo">
-            <a href="index.html"><img src="images/logo-2.png" alt="" /></a>
-          </div>
-          <div class="close-btn"><i class="icon fa fa-times"></i></div>
-        </div>
-        <ul class="navigation clearfix">
-          <!--Keep This Empty / Menu will come through Javascript-->
-        </ul>
-        <ul class="contact-list-one">
-          <li>
-            <i class="icon lnr-icon-envelope1"></i>
-            <div class="h2 title">Send Email</div>
-            <div class="text"><a href="https://html.kodesolution.com/cdn-cgi/l/email-protection#0c606d7b7f63624c69746d617c6069226f6361"><span class="__cf_email__" data-cfemail="1b7a77767a35777a6c6874755b7e637a766b777e35787476">[email&#160;protected]</span></a></div>
-          </li>
-        </ul>
-        <ul class="social-links">
-          <li><a href="#"><i class="icon fab fa-twitter"></i></a></li>
-          <li><a href="#"><i class="icon fab fa-facebook-f"></i></a></li>
-          <li><a href="#"><i class="icon fab fa-pinterest-p"></i></a></li>
-          <li><a href="#"><i class="icon fab fa-vimeo-v"></i></a></li>
-        </ul>
-      </nav>
-    </div>
-    <!-- End Mobile Menu -->
-
-    <!-- Header Search -->
-    <div class="search-popup">
-      <span class="search-back-drop"></span>
-      <button class="close-search"><span class="fa fa-times"></span></button>
-
-      <div class="search-inner">
-        <form method="post" action="https://html.kodesolution.com/2026/realexa-html/index.html">
-          <div class="form-group">
-            <input type="search" name="search-field" value="" placeholder="Search..." required="" />
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </div>
-        </form>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="page-about.html">About Us</a></li>
+        <li><a href="page-services.html" class="active">Services</a></li>
+        <li class="has-dropdown">
+          <a href="#">Our Projects <i class="fa-solid fa-chevron-down" style="font-size:11px; margin-left:5px; transition:transform 0.3s ease;"></i></a>
+          <ul class="projects-dropdown">
+            <li><a href="#ongoing-projects">Ongoing Projects</a></li>
+            <li><a href="#completed-projects">Completed Projects</a></li>
+          </ul>
+        </li>
+        
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#enquire" class="nav-btn">Enquire Now</a>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-    </div>
-    <!-- End Header Search -->
-
-    <!-- Sticky Header  -->
-      <div class="sticky-header">
-        <div class="auto-container">
-          <div class="inner-container">
-            <!--Logo-->
-            <div class="logo">
-              <a href="index.html"><img src="images/logo.png" alt="" /></a>
-            </div>
-
-          <!--Right Col-->
-          <div class="nav-outer">
-            <!-- Main Menu -->
-            <nav class="main-menu">
-              <div class="navbar-collapse show collapse clearfix">
-                <ul class="navigation clearfix">
-                  <!--Keep This Empty / Menu will come through Javascript-->
-                </ul>
-              </div>
-            </nav>
-            <!-- Main Menu End-->
-
-            <!--Mobile Navigation Toggler-->
-            <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Sticky Menu -->
-  </header>
+    </nav>
   <!--End Main Header -->
 
   <div id="smooth-wrapper">
@@ -212,110 +79,228 @@
       <!-- end main-content -->
 
       <!-- Services Section -->
-      <section class="service-section pt-120 pb-120 border-0">
-        <div class="auto-container">
-          <div class="service-block-wraper">
-            <div class="service-block-one">
-              <div class="inner-block wow fadeInUp" data-wow-delay="200ms">
-                <div class="icon"><i class="flaticon-set-agreement"></i></div>
-                <div class="h5 title"><a href="page-service-details.html">Property Buying <br>Assistance</a></div>
-                <div class="text">Helping clients find the right property based on budget, location,</div>
-              </div>
-            </div>
-            <div class="service-block-one">
-              <div class="inner-block wow fadeInUp" data-wow-delay="400ms">
-                <div class="icon"><i class="flaticon-set-property"></i></div>
-                <div class="h5 title"><a href="page-service-details.html">Property Selling <br>Services</a></div>
-                <div class="text">Strategic pricing, marketing, and negotiation to sell faster.</div>
-              </div>
-            </div>
-            <div class="service-block-one">
-              <div class="inner-block wow fadeInUp" data-wow-delay="600ms">
-                <div class="icon"><i class="flaticon-set-building-plan"></i></div>
-                <div class="h5 title"><a href="page-service-details.html">Rental & Leasing <br>Solutions</a></div>
-                <div class="text">Residential and commercial rental services with verified tenants.</div>
-              </div>
-            </div>
-            <div class="service-block-one">
-              <div class="inner-block wow fadeInUp" data-wow-delay="800ms">
-                <div class="icon"><i class="flaticon-set-investment-2"></i></div>
-                <div class="h5 title"><a href="page-service-details.html">Investment Consulting <br>Services</a></div>
-                <div class="text">Data-driven advice for high-return property investments.</div>
-              </div>
-            </div>
-          </div>
+     <div class="basil-services-page">
+<div class="page">
+ 
+  <!-- HEADER -->
+  <div class="header">
+    <div class="tagline-corner">SPACES<br>PEOPLE<br>PROGRESS</div>
+    <div class="eyebrow">BUILDING TOMORROW, TOGETHER</div>
+    <h1>OUR <span>SERVICES</span></h1>
+    <p>Basil Developers offers a comprehensive suite of construction services designed to meet the diverse needs of clients across various sectors.</p>
+  </div>
+ 
+  <!-- SERVICE 1: CIVIL CONSTRUCTION -->
+  <div class="service civil reveal">
+    <div class="service-index">01</div>
+ 
+    <div class="service-text">
+      <div class="icon-badge">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l6-4 6 4v13M9 21v-6h2v6M13 21v-6h2v6M9 11h.01M13 11h.01M9 15h.01M13 15h.01"/></svg>
+      </div>
+      <div class="sub-eyebrow">STRONG STRUCTURES. BRIGHTER FUTURES.</div>
+      <h2>Civil <span>Construction</span></h2>
+      <p class="desc">We undertake complete civil construction works for residential, commercial, industrial, and institutional projects with a strong focus on quality, safety, and structural integrity. Our experienced team ensures timely execution, cost efficiency, and adherence to the highest industry standards.</p>
+ 
+      <div class="feature-grid">
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V6l6-3 6 3v15M9 21v-4h2v4M13 21v-4h2v4"/></svg>
+          Residential Buildings (Apartments, Villas, Row Houses)
         </div>
-      </section>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6v18M4 4v18M10 4h6v18M16 4v18M6 8h2M6 12h2M6 16h2M12 8h2M12 12h2M12 16h2"/></svg>
+          Structural Design &amp; Execution
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V10l4-3h8l4 3v11M9 21v-5h6v5"/></svg>
+          Commercial Complexes (Offices, Retail, Mixed-use)
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-5.6 7-11a7 7 0 0 0-14 0c0 5.4 7 11 7 11z"/><path d="M9 11l2 2 4-4"/></svg>
+          Quality Control &amp; Safety Management
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12M3 21h18M9 21v-6h6v6"/></svg>
+          Industrial &amp; Warehousing Facilities
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+          Project Planning &amp; Management
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V8l8-5 8 5v13M4 21h16M10 21v-5h4v5"/></svg>
+          Institutional Projects (Schools, Colleges, Hospitals, etc.)
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          Timely Delivery
+        </div>
+      </div>
+ 
+      <button class="btn">KNOW MORE
+        <svg viewBox="0 0 24 24" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+ 
+    <div class="service-image">
+      <div class="gold-edge"></div>
+      <img src="images/basil/construction-site-image-only.png" alt="Building under construction with tower crane">
+      <div class="strip">
+        <div class="item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-5.6 7-11a7 7 0 0 0-14 0c0 5.4 7 11 7 11z"/><path d="M9 11l2 2 4-4"/></svg>QUALITY</div>
+        <div class="divider"></div>
+        <div class="item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 8.7 8 11 4.5-2.3 8-6 8-11V5l-8-3z"/></svg>SAFETY</div>
+        <div class="divider"></div>
+        <div class="item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>INTEGRITY</div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- SERVICE 2: LAND DEVELOPMENT -->
+  <div class="service land reveal">
+    <div class="service-index">02</div>
+ 
+    <div class="service-text">
+      <div class="icon-badge">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12A7 7 0 0 0 5 10c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.4"/></svg>
+      </div>
+      <div class="sub-eyebrow">PLANNED TODAY. PROSPEROUS TOMORROW.</div>
+      <h2>Land <span>Development</span></h2>
+      <p class="desc">We provide end-to-end land development solutions that transform raw land into well-planned, ready-to-utilize assets. Our expertise covers layout planning, infrastructure development, and compliance management, ensuring sustainable growth and long-term value.</p>
+ 
+      <div class="feature-grid">
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 3v18"/></svg>
+          Layout Planning &amp; Design
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 20 4M4 4h4M4 4v4M20 20h-4M20 20v-4"/></svg>
+          Leveling &amp; Earthwork
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c3-3 5 2 8 0s5-4 8 0M3 21h18"/></svg>
+          Roads &amp; Internal Infrastructure
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="11" rx="1"/><path d="M7 10V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4M9 14h.01M15 14h.01M12 14h.01M9 17h.01M15 17h.01M12 17h.01"/></svg>
+          Compound Walls &amp; Fencing
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 21v-4M5 8l2 2M17 16l2 2M3 12h4M17 12h4M5 16l2-2M17 8l2-2"/></svg>
+          Drainage &amp; Sewerage Systems
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 10h16M10 4v16"/></svg>
+          Plot Demarcation &amp; Site Development
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20c4-10 8 4 12-6M3 12c4-6 8 2 12-4"/><circle cx="19" cy="6" r="2"/></svg>
+          Water Supply &amp; Utility Networks
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          Approvals &amp; Compliance Support
+        </div>
+      </div>
+ 
+      <div class="feature" style="margin:-12px 0 22px; font-size:13.5px;">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" style="stroke:#2e3a24"><path d="M12 22c-4-2-7-6-7-11a7 7 0 0 1 14 0c0 5-3 9-7 11z"/><path d="M12 15v-4M12 11c0-3 3-4 5-4"/></svg>
+        Sustainable &amp; Future-ready Development
+      </div>
+ 
+      <button class="btn">KNOW MORE
+        <svg viewBox="0 0 24 24" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+ 
+    <div class="service-image">
+      <div class="gold-edge"></div>
+      <img src="images/basil/land-development-image-only.png" alt="Aerial view of planned land development plots and roads">
+      <div class="banner-tag">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c-4-2-7-6-7-11a7 7 0 0 1 14 0c0 5-3 9-7 11z"/><path d="M12 15v-4M12 11c0-3 3-4 5-4"/></svg>
+        <div class="txt">SUSTAINABLE<br>PLANNED<br>PROGRESSIVE</div>
+      </div>
+    </div>
+  </div>
+ 
+</div>
+</div>
       <!-- End Services Section -->
 
       <!-- Main Footer -->
-      <footer class="main-footer footer-style-one">
-        <div class="floating-img bounce-x"><img src="images/background/footer-bg-obj-1.png" alt=""></div>
-        <div class="floating-img2 bounce-y"><img src="images/background/footer-bg-obj-2.png" alt=""></div>
-        <!-- Widgets Section -->
-        <div class="widgets-section">
-          <div class="auto-container">
-            <div class="row">
-              <!-- Footer Column -->
-              <div class="footer-column col-lg-3 col-sm-6">
-                <div class="footer-widget links-widget ms-0 ms-xl-4">
-                  <div class="h4 widget-title">Quick Links</div>
-                  <div class="widget-content">
-                    <ul class="user-links">
-                      <li><a href="#/">Home</a></li>
-                      <li><a href="#/">Pages</a></li>
-                      <li><a href="#/">Apartments</a></li>
-                      <li><a href="#/">News</a></li>
-                      <li><a href="#/">Contact</a></li>
-                    </ul>
+       <footer class="main-footer footer-style-one">
+          <div class="floating-img bounce-x"><img src="images/background/footer-bg-obj-1.png" alt=""></div>
+          <div class="floating-img2 bounce-y"><img src="images/background/footer-bg-obj-2.png" alt=""></div>
+          <!-- Widgets Section -->
+          <div class="widgets-section">
+            <div class="auto-container">
+              <div class="row">
+                <!-- Footer Column -->
+                <div class="footer-column col-lg-3 col-sm-6">
+                  <div class="footer-widget links-widget ms-0 ms-xl-4">
+                    <div class="h4 widget-title">Quick Links</div>
+                    <div class="widget-content">
+                      <ul class="user-links">
+                        <li><a href="#/">Home</a></li>
+                        <li><a href="#/">About us</a></li>
+                        <li><a href="#/">Services</a></li>
+                        <li><a href="#/">Projects</a></li>
+                        <li><a href="#/">Contact</a></li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <!-- Footer Column -->
-              <div class="footer-column col-lg-6 col-sm-6">
-                <div class="footer-widget news-widget">
-                  <div class="widget-content">
-                    <div class="text"><em>Subscribe</em> to receive high-potential investment properties, market analysis, and expert recommendations..</div>
-                    <form class="newsletter-form" method="post" action="#">
-                      <div class="form-group">
-                        <input type="email" name="email" class="email" placeholder="Your email address" required="">
-                        <button type="button" class="subscribe-btn">Subscribe <i class="fa-light fa-paper-plane"></i></button>
+                <!-- Footer Column -->
+                <div class="footer-column col-lg-6 col-sm-6">
+                  <div class="footer-widget news-widget">
+                    <div class="widget-content">
+                      <img src="images/basil/Basil Logo.png" width="200" alt="">
+                      <div class="text"><em>Subscribe</em> to receive high-potential investment properties, market
+                        analysis, and expert recommendations..</div>
+                      <form class="newsletter-form" method="post" action="#">
+                        <div class="form-group">
+                          <input type="email" name="email" class="email" placeholder="Your email address" required="">
+                          <button type="button" class="subscribe-btn">Subscribe <i
+                              class="fa-light fa-paper-plane"></i></button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!-- footer column -->
+                <div class="footer-column col-lg-3 col-sm-6">
+                  <div class="footer-widget info-widget">
+                    <div class="h4 widget-title">Contact Us</div>
+                    <div class="widget-content">
+                      <!-- Contact List -->
+                      <div class="contact-list">
+                        <div class="list-info"><a href="tel:7030445000">+91 7030445000</a></div>
+                        <div class="list-info"><a
+                            href="https://html.kodesolution.com/cdn-cgi/l/email-protection#36585353525e535a467655595b4657584f1855595b"><span
+                              class="__cf_email__"
+                              data-cfemail="5a343f3f3e323f362a1a3935372a3b342374393537">basildeveloperspune@gmail.com</span></a>
+                        </div>
+                        <div class="list-info"><a href="#" class="address">Basil Serenity, S. No. 512/2, Behind Tanish Orchid, Charholi (Bk), Pune – 412105</a>
+                        </div>
                       </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-              <!-- footer column -->
-              <div class="footer-column col-lg-3 col-sm-6">
-                <div class="footer-widget info-widget">
-                  <div class="h4 widget-title">Contact Us</div>
-                  <div class="widget-content">
-                    <!-- Contact List -->
-                    <div class="contact-list">
-                      <div class="list-info"><a href="tel:+175005-0088">+175 005-0088</a></div>
-                      <div class="list-info"><a href="https://html.kodesolution.com/cdn-cgi/l/email-protection#f09e95959498959c80b0939f9d80919e89de939f9d"><span class="__cf_email__" data-cfemail="711f14141519141d0131121e1c01101f085f121e1c">[email&#160;protected]</span></a></div>
-                      <div class="list-info"><a href="#" class="address">1901 Thornridge Cir. Shiloh Hawaii 81063</a></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="auto-container">
-          <div class="footer-bottom">
-            <div class="inner-container justify-content-center justify-content-sm-between">
-              <div class="h5">5 class="copyright-text"> 2026 by Company.com</div>
-              <ul class="d-flex align-items-center gap-2">
-                <li><a href="#0">Privacy Policy</a></li>
-                <li>|</li>
-                <li><a href="#0">Terms & Conditions</a></li>
-              </ul>
+          <div class="auto-container">
+            <div class="footer-bottom">
+              <div class="inner-container justify-content-center justify-content-sm-between">
+                <p class="copyright-text">© Copyright 2026 by Basil Infra Design By <a href="https://vedhindia.com">vedhindia</a></p>
+                <ul class="d-flex align-items-center gap-2">
+                  <li><a href="#0">Privacy Policy</a></li>
+                  <li>|</li>
+                  <li><a href="#0">Terms & Conditions</a></li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <img class="img-reveal footer-bottom-logo" src="images/footer-bottom-logo.png" alt="">
-      </footer>
+        </footer>
       <!--End Main Footer -->
     </div>
   </div>
@@ -345,6 +330,19 @@
 <script src="js/custom-gsap.js"></script>
 <script src="js/script.js"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925" integrity="sha512-d9sL6GJLXn6fInD1+TVXhTcQOsmxeHfmHAvwGDIxp5TO+uo1fiWW7mHomMj4MLRlCsJDTqXzWLHJFFlPCEIj/A==" data-cf-beacon='{"version":"2024.11.0","token":"88f4fa328f314d4c95a104b4a60b2313","r":1}' crossorigin="anonymous"></script>
+<script>
+  // Scroll reveal for each service block
+  const items = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  items.forEach(el => observer.observe(el));
+</script>
 </body>
 
 <!-- Mirrored from html.kodesolution.com/2026/realexa-html/page-services.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 02 Sep 2026 06:18:16 GMT -->
