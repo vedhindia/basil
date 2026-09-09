@@ -39,6 +39,7 @@
           <img src="images/basil/Basil Logo.png" alt="Basil Developers Logo">
         </div>
         <ul class="nav-links" id="navLinks">
+          <span class="mobile-nav-close" onclick="toggleMenu()" title="Close menu">&times;</span>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="page-about.html">About Us</a></li>
           <li><a href="page-services.html">Services</a></li>
@@ -60,6 +61,7 @@
           <span></span>
         </div>
       </nav>
+      <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="toggleMenu()"></div>
       <!--End Main Header -->
 
       <div id="smooth-wrapper">
@@ -874,32 +876,72 @@
       data-cf-beacon='{"version":"2024.11.0","token":"88f4fa328f314d4c95a104b4a60b2313","r":1}'
       crossorigin="anonymous"></script>
     <script>
+    /* Mobile Drawer (slide LEFT -> RIGHT) + Close Button + Esc + Overlay + Resize auto-close */
+    function toggleMenu() {
+      var navLinks = document.getElementById('navLinks');
+      var overlay = document.getElementById('mobileNavOverlay');
+      var body = document.body;
+      if (!navLinks) return;
+      var isOpening = !navLinks.classList.contains('active');
+      navLinks.classList.toggle('active');
+      if (overlay) overlay.classList.toggle('open', isOpening);
+      if (body) body.classList.toggle('mobile-menu-open', isOpening);
+    }
     (function () {
+      /* Sticky navbar */
       var navbar = document.querySelector('.navbar');
       var smoothWrapper = document.getElementById('smooth-wrapper');
-      if (!navbar) return;
       var stickyThreshold = 80;
       function handleSticky() {
+        if (!navbar) return;
         var scrollY = window.scrollY || window.pageYOffset;
         if (scrollY > stickyThreshold) {
           if (!navbar.classList.contains('navbar-sticky')) {
             navbar.classList.add('navbar-sticky');
-            if (smoothWrapper) {
-              smoothWrapper.style.marginTop = navbar.offsetHeight + 'px';
-            }
+            if (smoothWrapper) smoothWrapper.style.marginTop = navbar.offsetHeight + 'px';
           }
         } else {
           if (navbar.classList.contains('navbar-sticky')) {
             navbar.classList.remove('navbar-sticky');
-            if (smoothWrapper) {
-              smoothWrapper.style.marginTop = '';
-            }
+            if (smoothWrapper) smoothWrapper.style.marginTop = '';
           }
         }
       }
       window.addEventListener('scroll', handleSticky, { passive: true });
       window.addEventListener('load', handleSticky);
       handleSticky();
+
+      /* Close drawer when clicking a link (navigates) */
+      document.addEventListener('click', function (e) {
+        var nav = document.getElementById('navLinks');
+        if (!nav || !nav.classList.contains('active')) return;
+        var link = e.target.closest('#navLinks li a');
+        if (link && !link.closest('.has-dropdown')) {
+          toggleMenu();
+        } else if (link && link.closest('.projects-dropdown')) {
+          /* close drawer when user clicks Ongoing / Completed */
+          toggleMenu();
+        }
+      });
+
+      /* Close drawer with ESC key */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          var nav = document.getElementById('navLinks');
+          if (nav && nav.classList.contains('active')) toggleMenu();
+        }
+      });
+
+      /* Auto-close drawer if user resizes window to desktop */
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 992) {
+          var nav = document.getElementById('navLinks');
+          var overlay = document.getElementById('mobileNavOverlay');
+          if (nav && nav.classList.contains('active')) nav.classList.remove('active');
+          if (overlay && overlay.classList.contains('open')) overlay.classList.remove('open');
+          if (document.body.classList.contains('mobile-menu-open')) document.body.classList.remove('mobile-menu-open');
+        }
+      });
     })();
   </script>
   </body>
