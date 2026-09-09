@@ -1137,3 +1137,57 @@ var THEMEMASCOT = {};
 	});
 
 })(window.jQuery);
+
+function toggleMenu() {
+  var navLinks = document.getElementById('navLinks');
+  var overlay = document.getElementById('mobileNavOverlay');
+  var body = document.body;
+
+  if (navLinks.classList.contains('active')) {
+    navLinks.classList.remove('active');
+    overlay.classList.remove('open');
+    body.classList.remove('mobile-menu-open');
+  } else {
+    navLinks.classList.add('active');
+    overlay.classList.add('open');
+    body.classList.add('mobile-menu-open');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var navBtn = document.querySelector('.nav-btn');
+  if (navBtn) {
+    navBtn.addEventListener('click', function(e) {
+      var href = navBtn.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        var target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      var navLinks = document.getElementById('navLinks');
+      var overlay = document.getElementById('mobileNavOverlay');
+      var body = document.body;
+      if (navLinks && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        overlay.classList.remove('open');
+        body.classList.remove('mobile-menu-open');
+      }
+    });
+  }
+
+  var navLinksAnchors = document.querySelectorAll('.nav-links li a');
+  navLinksAnchors.forEach(function(link) {
+    link.addEventListener('click', function() {
+      var navLinks = document.getElementById('navLinks');
+      var overlay = document.getElementById('mobileNavOverlay');
+      var body = document.body;
+      if (navLinks && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        overlay.classList.remove('open');
+        body.classList.remove('mobile-menu-open');
+      }
+    });
+  });
+});

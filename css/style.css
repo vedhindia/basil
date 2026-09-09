@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /* Realexa - Real Estate HTML Template
 
 Template Name: Realexa
@@ -16456,3 +16456,739 @@ body {
     .petal, .hub, .card { transition: none !important; }
     .flower-stage .petal, .flower-stage .hub { opacity: 1; transform: translate(-50%,-50%) scale(1); }
   }
+
+/* ============ Basil Services Page Styles (bs-* prefixed, no class conflicts) ============ */
+
+.basil-services-page {
+  width: 100%;
+  background: #faf7f2;
+  overflow-x: hidden;
+}
+
+.basil-services-page .bs-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 40px 100px;
+  position: relative;
+}
+
+/* ---------- Service Page Hero ---------- */
+.basil-services-page .bs-hero {
+  position: relative;
+  padding: 80px 40px 70px;
+  margin-bottom: 80px;
+  background: linear-gradient(135deg, #0a1628 0%, #162844 50%, #0a1628 100%);
+  border-radius: 28px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(10, 22, 40, 0.35);
+}
+
+.basil-services-page .bs-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(201, 162, 75, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(201, 162, 75, 0.12) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.basil-services-page .bs-tagline {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 3px;
+  line-height: 1.7;
+  color: rgba(201, 162, 75, 0.65);
+  text-align: left;
+}
+
+.basil-services-page .bs-eyebrow {
+  position: relative;
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #c9a24b;
+  padding: 8px 22px;
+  border: 1px solid rgba(201, 162, 75, 0.4);
+  border-radius: 100px;
+  margin-bottom: 28px;
+  background: rgba(201, 162, 75, 0.06);
+}
+
+.basil-services-page .bs-hero h1 {
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 6vw, 78px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 22px;
+}
+
+.basil-services-page .bs-hero h1 span {
+  color: #c9a24b;
+  font-style: italic;
+}
+
+.basil-services-page .bs-hero p {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(232, 228, 217, 0.85);
+  font-family: 'Inter', sans-serif;
+}
+
+/* ---------- Service Block (shared) ---------- */
+.basil-services-page .bs-service {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 70px;
+  align-items: center;
+  padding: 60px 50px;
+  margin-bottom: 60px;
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 15px 50px rgba(10, 22, 40, 0.08);
+  border: 1px solid rgba(201, 162, 75, 0.08);
+  /* Scroll-reveal start state â€” unique, scoped class */
+  opacity: 0;
+  -webkit-transform: translateY(60px);
+      -ms-transform: translateY(60px);
+          transform: translateY(60px);
+  -webkit-transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              -webkit-transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s ease;
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s ease;
+}
+
+.basil-services-page .bs-service.bs-visible {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.basil-services-page .bs-service:hover {
+  box-shadow: 0 25px 70px rgba(10, 22, 40, 0.14);
+}
+
+.basil-services-page .bs-service.bs-land {
+  background: linear-gradient(135deg, #fdfaf3 0%, #f5efe0 100%);
+  grid-template-columns: 1fr 1.05fr;
+}
+
+.basil-services-page .bs-service.bs-land .bs-service-text {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.basil-services-page .bs-service.bs-land .bs-service-image {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+}
+
+.basil-services-page .bs-service-index {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-family: 'Playfair Display', serif;
+  font-size: 140px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(201, 162, 75, 0.08);
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.basil-services-page .bs-service.bs-land .bs-service-index {
+  left: 40px;
+  right: auto;
+  color: rgba(46, 58, 36, 0.07);
+}
+
+/* ---------- Service Text ---------- */
+.basil-services-page .bs-service-text {
+  position: relative;
+  z-index: 2;
+}
+
+.basil-services-page .bs-icon-badge {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #0a1628 0%, #162844 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 26px;
+  box-shadow: 0 10px 25px rgba(10, 22, 40, 0.2);
+}
+
+.basil-services-page .bs-service.bs-land .bs-icon-badge {
+  background: linear-gradient(135deg, #2e3a24 0%, #4a5a36 100%);
+  box-shadow: 0 10px 25px rgba(46, 58, 36, 0.2);
+}
+
+.basil-services-page .bs-icon-badge svg {
+  width: 36px;
+  height: 36px;
+  stroke: #c9a24b;
+  stroke-width: 1.8;
+  fill: none;
+}
+
+.basil-services-page .bs-service.bs-land .bs-icon-badge svg {
+  stroke: #d4bb6a;
+}
+
+.basil-services-page .bs-sub-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #c9a24b;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.basil-services-page .bs-service.bs-land .bs-sub-eyebrow {
+  color: #2e3a24;
+}
+
+.basil-services-page .bs-service-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 50px);
+  font-weight: 700;
+  color: #0a1628;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.basil-services-page .bs-service-text h2 span {
+  color: #c9a24b;
+  font-style: italic;
+}
+
+.basil-services-page .bs-service.bs-land .bs-service-text h2 {
+  color: #1a2412;
+}
+
+.basil-services-page .bs-service.bs-land .bs-service-text h2 span {
+  color: #5a6a3a;
+}
+
+.basil-services-page .bs-desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #5a5a5a;
+  margin-bottom: 32px;
+  font-family: 'Inter', sans-serif;
+}
+
+.basil-services-page .bs-service.bs-land .bs-desc {
+  color: #4a4a42;
+}
+
+/* ---------- Feature Grid ---------- */
+.basil-services-page .bs-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.basil-services-page .bs-feature {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(201, 162, 75, 0.06);
+  border: 1px solid rgba(201, 162, 75, 0.15);
+  border-radius: 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #2a2a2a;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.basil-services-page .bs-feature:hover {
+  background: rgba(201, 162, 75, 0.12);
+  -webkit-transform: translateY(-2px);
+      -ms-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+.basil-services-page .bs-service.bs-land .bs-feature {
+  background: rgba(46, 58, 36, 0.06);
+  border-color: rgba(46, 58, 36, 0.15);
+  color: #1a2412;
+}
+
+.basil-services-page .bs-service.bs-land .bs-feature:hover {
+  background: rgba(46, 58, 36, 0.12);
+}
+
+.basil-services-page .bs-feature svg {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  stroke: #c9a24b;
+  stroke-width: 2;
+  fill: none;
+  margin-top: 1px;
+}
+
+.basil-services-page .bs-service.bs-land .bs-feature svg {
+  stroke: #2e3a24;
+}
+
+.basil-services-page .bs-single-feature {
+  font-size: 13.5px;
+  margin: -12px 0 22px;
+}
+
+/* ---------- Know More Button ---------- */
+.basil-services-page .bs-btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #0a1628 0%, #162844 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  -webkit-transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 10px 25px rgba(10, 22, 40, 0.2);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.basil-services-page .bs-btn:hover {
+  -webkit-transform: translateY(-3px);
+      -ms-transform: translateY(-3px);
+          transform: translateY(-3px);
+  box-shadow: 0 16px 35px rgba(10, 22, 40, 0.3);
+  background: linear-gradient(135deg, #162844 0%, #1e3a5e 100%);
+  color: #fff;
+}
+
+.basil-services-page .bs-btn svg {
+  width: 18px;
+  height: 18px;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.basil-services-page .bs-btn:hover svg {
+  -webkit-transform: translateX(4px);
+      -ms-transform: translateX(4px);
+          transform: translateX(4px);
+}
+
+.basil-services-page .bs-service.bs-land .bs-btn {
+  background: linear-gradient(135deg, #2e3a24 0%, #4a5a36 100%);
+  box-shadow: 0 10px 25px rgba(46, 58, 36, 0.25);
+}
+
+.basil-services-page .bs-service.bs-land .bs-btn:hover {
+  background: linear-gradient(135deg, #3d4d30 0%, #5a6a3a 100%);
+  box-shadow: 0 16px 35px rgba(46, 58, 36, 0.35);
+}
+
+/* ---------- Service Image ---------- */
+.basil-services-page .bs-service-image {
+  position: relative;
+  z-index: 2;
+}
+
+.basil-services-page .bs-service-image img {
+  width: 100%;
+  height: 480px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 22px;
+  display: block;
+  box-shadow: 0 20px 50px rgba(10, 22, 40, 0.2);
+}
+
+.basil-services-page .bs-gold-edge {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  bottom: 40px;
+  left: 40px;
+  border: 2px solid rgba(201, 162, 75, 0.45);
+  border-radius: 22px;
+  z-index: -1;
+}
+
+.basil-services-page .bs-service.bs-land .bs-gold-edge {
+  top: -14px;
+  right: 40px;
+  bottom: 40px;
+  left: -14px;
+  border-color: rgba(46, 58, 36, 0.35);
+}
+
+/* ---------- Quality / Safety / Integrity Strip ---------- */
+.basil-services-page .bs-strip {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0;
+  padding: 14px 10px;
+  background: #ffffff;
+  border: 1px solid rgba(201, 162, 75, 0.25);
+  border-radius: 100px;
+  box-shadow: 0 12px 35px rgba(10, 22, 40, 0.18);
+  z-index: 3;
+  white-space: nowrap;
+}
+
+.basil-services-page .bs-strip .bs-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 22px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #0a1628;
+  text-transform: uppercase;
+}
+
+.basil-services-page .bs-strip .bs-item svg {
+  width: 20px;
+  height: 20px;
+  stroke: #c9a24b;
+  stroke-width: 2;
+  fill: none;
+}
+
+.basil-services-page .bs-strip .bs-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(201, 162, 75, 0.3);
+}
+
+/* ---------- Land Development Banner Tag ---------- */
+.basil-services-page .bs-banner-tag {
+  position: absolute;
+  top: 28px;
+  right: -20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 22px;
+  background: linear-gradient(135deg, #2e3a24 0%, #3d4d30 100%);
+  border-radius: 16px;
+  box-shadow: 0 14px 35px rgba(46, 58, 36, 0.35);
+  z-index: 3;
+}
+
+.basil-services-page .bs-banner-tag svg {
+  width: 32px;
+  height: 32px;
+  stroke: #d4bb6a;
+  stroke-width: 2;
+  fill: none;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.basil-services-page .bs-banner-tag .bs-txt {
+  font-family: 'Playfair Display', serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.6;
+  color: #d4bb6a;
+  text-transform: uppercase;
+}
+
+/* ============ Services Page Responsive ============ */
+
+@media (max-width: 1200px) {
+  .basil-services-page .bs-page {
+    padding: 50px 28px 80px;
+  }
+  .basil-services-page .bs-service {
+    gap: 50px;
+    padding: 50px 36px;
+  }
+  .basil-services-page .bs-service-image img {
+    height: 420px;
+  }
+  .basil-services-page .bs-service-index {
+    font-size: 110px;
+  }
+}
+
+@media (max-width: 992px) {
+  .basil-services-page .bs-page {
+    padding: 40px 20px 70px;
+  }
+  .basil-services-page .bs-hero {
+    padding: 70px 28px 60px;
+    margin-bottom: 60px;
+    border-radius: 22px;
+  }
+  .basil-services-page .bs-tagline {
+    font-size: 11px;
+    letter-spacing: 2px;
+    top: 20px;
+    left: 20px;
+  }
+  .basil-services-page .bs-service,
+  .basil-services-page .bs-service.bs-land {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    padding: 44px 28px 60px;
+    border-radius: 22px;
+  }
+  .basil-services-page .bs-service.bs-land .bs-service-text { order: 1; }
+  .basil-services-page .bs-service.bs-land .bs-service-image { order: 2; }
+  .basil-services-page .bs-service-image img { height: 380px; }
+  .basil-services-page .bs-service-index,
+  .basil-services-page .bs-service.bs-land .bs-service-index {
+    font-size: 100px;
+    top: 16px;
+    right: 24px;
+    left: auto;
+  }
+  .basil-services-page .bs-gold-edge {
+    top: -10px; right: -10px; bottom: 40px; left: 30px;
+  }
+  .basil-services-page .bs-service.bs-land .bs-gold-edge {
+    top: -10px; right: 30px; bottom: 40px; left: -10px;
+  }
+  .basil-services-page .bs-strip .bs-item {
+    padding: 4px 14px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  .basil-services-page .bs-banner-tag {
+    right: -10px; top: 20px;
+    padding: 12px 16px;
+    gap: 10px;
+  }
+  .basil-services-page .bs-banner-tag svg { width: 26px; height: 26px; }
+  .basil-services-page .bs-banner-tag .bs-txt {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .basil-services-page .bs-page {
+    padding: 30px 14px 60px;
+  }
+  .basil-services-page .bs-hero {
+    padding: 60px 22px 50px;
+    margin-bottom: 48px;
+    border-radius: 18px;
+  }
+  .basil-services-page .bs-tagline { display: none; }
+  .basil-services-page .bs-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    padding: 6px 18px;
+    margin-bottom: 22px;
+  }
+  .basil-services-page .bs-service,
+  .basil-services-page .bs-service.bs-land {
+    padding: 36px 20px 70px;
+    margin-bottom: 48px;
+    border-radius: 18px;
+    gap: 36px;
+  }
+  .basil-services-page .bs-icon-badge {
+    width: 60px; height: 60px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+  .basil-services-page .bs-icon-badge svg { width: 30px; height: 30px; }
+  .basil-services-page .bs-service-image img {
+    height: 320px;
+    border-radius: 18px;
+  }
+  .basil-services-page .bs-service-index,
+  .basil-services-page .bs-service.bs-land .bs-service-index {
+    font-size: 80px;
+    top: 12px;
+    right: 16px;
+  }
+  .basil-services-page .bs-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+  .basil-services-page .bs-feature {
+    padding: 12px 14px;
+    font-size: 13.5px;
+  }
+  .basil-services-page .bs-btn {
+    padding: 14px 26px;
+    font-size: 13px;
+    letter-spacing: 0.8px;
+  }
+  .basil-services-page .bs-strip {
+    bottom: -20px;
+    padding: 10px 8px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 6px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 18px;
+    white-space: normal;
+    width: calc(100% - 24px);
+    left: 12px;
+    right: 12px;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+  }
+  .basil-services-page .bs-strip .bs-divider { display: none; }
+  .basil-services-page .bs-strip .bs-item {
+    padding: 4px 10px;
+    font-size: 10.5px;
+    letter-spacing: 0.8px;
+  }
+  .basil-services-page .bs-strip .bs-item svg { width: 16px; height: 16px; }
+  .basil-services-page .bs-banner-tag {
+    right: 10px; top: 14px;
+    padding: 10px 14px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+  .basil-services-page .bs-banner-tag svg { width: 22px; height: 22px; }
+  .basil-services-page .bs-banner-tag .bs-txt {
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+  }
+  .basil-services-page .bs-gold-edge {
+    top: -8px; right: -8px; bottom: 50px; left: 20px;
+  }
+  .basil-services-page .bs-service.bs-land .bs-gold-edge {
+    top: -8px; right: 20px; bottom: 50px; left: -8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .basil-services-page .bs-page {
+    padding: 24px 10px 50px;
+  }
+  .basil-services-page .bs-hero {
+    padding: 48px 18px 40px;
+    margin-bottom: 40px;
+    border-radius: 16px;
+  }
+  .basil-services-page .bs-hero h1 {
+    font-size: 36px;
+    margin-bottom: 18px;
+  }
+  .basil-services-page .bs-hero p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .basil-services-page .bs-service,
+  .basil-services-page .bs-service.bs-land {
+    padding: 30px 16px 72px;
+    margin-bottom: 40px;
+    border-radius: 16px;
+    gap: 30px;
+  }
+  .basil-services-page .bs-service-text h2 {
+    font-size: 30px;
+    margin-bottom: 16px;
+  }
+  .basil-services-page .bs-desc {
+    font-size: 15px;
+    line-height: 1.75;
+    margin-bottom: 26px;
+  }
+  .basil-services-page .bs-service-image img {
+    height: 260px;
+    border-radius: 16px;
+  }
+  .basil-services-page .bs-service-index,
+  .basil-services-page .bs-service.bs-land .bs-service-index {
+    font-size: 60px;
+    opacity: 0.5;
+  }
+  .basil-services-page .bs-gold-edge { display: none; }
+  .basil-services-page .bs-banner-tag {
+    right: 8px; top: 10px;
+    padding: 8px 12px;
+    gap: 6px;
+  }
+  .basil-services-page .bs-banner-tag svg { width: 20px; height: 20px; }
+  .basil-services-page .bs-banner-tag .bs-txt {
+    font-size: 9px;
+    letter-spacing: 0.8px;
+  }
+}
