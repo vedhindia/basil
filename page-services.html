@@ -15,7 +15,9 @@
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Basil Developers is a trusted real estate developer in Pune with 15+ years of experience in residential projects, civil construction, land development, and property investment consulting.">
 
+<link  rel="canonical"  href="https://basilinfra.in/page-services.html">
 </head>
 
 <body>
@@ -323,14 +325,114 @@
 <script src="js/gsap-scroll-to-plugin.js"></script>
 <script src="js/SplitText.min.js"></script>
 <script src="js/custom-gsap.js"></script>
-<script src="js/script.js"></script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925" integrity="sha512-d9sL6GJLXn6fInD1+TVXhTcQOsmxeHfmHAvwGDIxp5TO+uo1fiWW7mHomMj4MLRlCsJDTqXzWLHJFFlPCEIj/A==" data-cf-beacon='{"version":"2024.11.0","token":"88f4fa328f314d4c95a104b4a60b2313","r":1}' crossorigin="anonymous"></script>
 <script>
-  // Scroll reveal for each service block
+  function toggleMenu() {
+    var navLinks = document.getElementById('navLinks');
+    var overlay = document.getElementById('mobileNavOverlay');
+    var body = document.body;
+    if (!navLinks) return;
+    var isOpening = !navLinks.classList.contains('active');
+    navLinks.classList.toggle('active');
+    if (overlay) overlay.classList.toggle('open', isOpening);
+    if (body) body.classList.toggle('mobile-menu-open', isOpening);
+  }
+
+  (function () {
+    var navbar = document.querySelector('.navbar');
+    var smoothWrapper = document.getElementById('smooth-wrapper');
+    var stickyThreshold = 80;
+
+    function handleSticky() {
+      if (!navbar) return;
+      var scrollY = window.scrollY || window.pageYOffset;
+      if (scrollY > stickyThreshold) {
+        if (!navbar.classList.contains('navbar-sticky')) {
+          navbar.classList.add('navbar-sticky');
+          if (smoothWrapper) smoothWrapper.style.marginTop = navbar.offsetHeight + 'px';
+        }
+      } else {
+        if (navbar.classList.contains('navbar-sticky')) {
+          navbar.classList.remove('navbar-sticky');
+          if (smoothWrapper) smoothWrapper.style.marginTop = '';
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleSticky, { passive: true });
+    window.addEventListener('load', handleSticky);
+    handleSticky();
+
+    document.addEventListener('click', function (e) {
+      var nav = document.getElementById('navLinks');
+      if (!nav || !nav.classList.contains('active')) return;
+      var link = e.target.closest('#navLinks li a');
+      if (link && !link.closest('.has-dropdown')) {
+        toggleMenu();
+      } else if (link && link.closest('.projects-dropdown')) {
+        toggleMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        var nav = document.getElementById('navLinks');
+        if (nav && nav.classList.contains('active')) toggleMenu();
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 992) {
+        var nav = document.getElementById('navLinks');
+        var overlay = document.getElementById('mobileNavOverlay');
+        if (nav && nav.classList.contains('active')) nav.classList.remove('active');
+        if (overlay && overlay.classList.contains('open')) overlay.classList.remove('open');
+        if (document.body.classList.contains('mobile-menu-open')) document.body.classList.remove('mobile-menu-open');
+      }
+    });
+  })();
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var navBtn = document.querySelector('.nav-btn');
+    if (navBtn) {
+      navBtn.addEventListener('click', function(e) {
+        var href = navBtn.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          var target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+        var navLinks = document.getElementById('navLinks');
+        var overlay = document.getElementById('mobileNavOverlay');
+        var body = document.body;
+        if (navLinks && navLinks.classList.contains('active')) {
+          navLinks.classList.remove('active');
+          if (overlay) overlay.classList.remove('open');
+          if (body) body.classList.remove('mobile-menu-open');
+        }
+      });
+    }
+
+    var navLinksAnchors = document.querySelectorAll('.nav-links li a');
+    navLinksAnchors.forEach(function(link) {
+      link.addEventListener('click', function() {
+        var navLinks = document.getElementById('navLinks');
+        var overlay = document.getElementById('mobileNavOverlay');
+        var body = document.body;
+        if (navLinks && navLinks.classList.contains('active')) {
+          navLinks.classList.remove('active');
+          if (overlay) overlay.classList.remove('open');
+          if (body) body.classList.remove('mobile-menu-open');
+        }
+      });
+    });
+  });
+
   const items = document.querySelectorAll('.bs-reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting){
+      if (entry.isIntersecting) {
         entry.target.classList.add('bs-visible');
         observer.unobserve(entry.target);
       }
@@ -338,6 +440,8 @@
   }, { threshold: 0.15 });
   items.forEach(el => observer.observe(el));
 </script>
+<script src="js/script.js"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925" integrity="sha512-d9sL6GJLXn6fInD1+TVXhTcQOsmxeHAvwGDIxp5TO+uo1fiWW7mHomMj4MLRlCsJDTqXzWLHJFFlPCEIj/A==" data-cf-beacon='{"version":"2024.11.0","token":"88f4fa328f314d4c95a104b4a60b2313","r":1}' crossorigin="anonymous"></script>
 </body>
 
 <!-- Mirrored from html.kodesolution.com/2026/realexa-html/page-services.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 02 Sep 2026 06:18:16 GMT -->

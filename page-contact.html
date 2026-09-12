@@ -7,6 +7,8 @@
     <!-- Stylesheets -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
+    <meta name="description" content="Basil Developers is a trusted real estate developer in Pune with 15+ years of experience in residential projects, civil construction, land development, and property investment consulting.">
+
 
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <link rel="icon" href="images/favicon.png" type="image/x-icon" />
@@ -14,6 +16,8 @@
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link  rel="canonical"  href="https://basilinfra.in/page-contact.html">
 
   </head>
 
@@ -61,39 +65,7 @@
         <span></span>
       </div>
     </nav>
-    <!--End Main Header --> 
-
-        <!-- Sticky Header  -->
-        <div class="sticky-header">
-          <div class="auto-container">
-            <div class="inner-container">
-              <!--Logo-->
-              <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt /></a>
-              </div>
-
-              <!--Right Col-->
-              <div class="nav-outer">
-                <!-- Main Menu -->
-                <nav class="main-menu">
-                  <div class="navbar-collapse show collapse clearfix">
-                    <ul class="navigation clearfix">
-                      <!--Keep This Empty / Menu will come through Javascript-->
-                    </ul>
-                  </div>
-                </nav>
-                <!-- Main Menu End-->
-
-                <!--Mobile Navigation Toggler-->
-                <div class="mobile-nav-toggler"><span
-                    class="icon lnr-icon-bars"></span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Sticky Menu -->
-      </header>
-      <!--End Main Header -->
+    <!--End Main Header -->
 
       <div id="smooth-wrapper">
         <div id="smooth-content">
@@ -231,7 +203,7 @@ Have a project in mind or need help with your business? Get in touch with our te
           <!-- Map Section-->
           <section class="map-section">
             <iframe class="map w-100"
-              src="https://maps.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.042936313046!2d73.89744937393957!3d18.66206916483914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c7f367feb1b9%3A0x4b3483cec72b184d!2sBasil%20Serenity!5e0!3m2!1sen!2sin!4v1788862192351!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              src="https://maps.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.042936313046!2d73.89744937393957!3d18.66206916483914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c7f367feb1b9%3A0x4b3483cec72b184d!2sBasil%20Serenity!5e0!3m2!1sen!2sin!4v1788862192351!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="Basil Developers office location in Charholi, Pune" referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </section>
           <!--End Map Section-->
 
@@ -346,6 +318,110 @@ Have a project in mind or need help with your business? Get in touch with our te
     <script src="js/gsap-scroll-to-plugin.js"></script>
     <script src="js/SplitText.min.js"></script>
     <script src="js/custom-gsap.js"></script>
+    <script>
+      function toggleMenu() {
+        var navLinks = document.getElementById('navLinks');
+        var overlay = document.getElementById('mobileNavOverlay');
+        var body = document.body;
+        if (!navLinks) return;
+        var isOpening = !navLinks.classList.contains('active');
+        navLinks.classList.toggle('active');
+        if (overlay) overlay.classList.toggle('open', isOpening);
+        if (body) body.classList.toggle('mobile-menu-open', isOpening);
+      }
+
+      (function () {
+        var navbar = document.querySelector('.navbar');
+        var smoothWrapper = document.getElementById('smooth-wrapper');
+        var stickyThreshold = 80;
+
+        function handleSticky() {
+          if (!navbar) return;
+          var scrollY = window.scrollY || window.pageYOffset;
+          if (scrollY > stickyThreshold) {
+            if (!navbar.classList.contains('navbar-sticky')) {
+              navbar.classList.add('navbar-sticky');
+              if (smoothWrapper) smoothWrapper.style.marginTop = navbar.offsetHeight + 'px';
+            }
+          } else {
+            if (navbar.classList.contains('navbar-sticky')) {
+              navbar.classList.remove('navbar-sticky');
+              if (smoothWrapper) smoothWrapper.style.marginTop = '';
+            }
+          }
+        }
+
+        window.addEventListener('scroll', handleSticky, { passive: true });
+        window.addEventListener('load', handleSticky);
+        handleSticky();
+
+        document.addEventListener('click', function (e) {
+          var nav = document.getElementById('navLinks');
+          if (!nav || !nav.classList.contains('active')) return;
+          var link = e.target.closest('#navLinks li a');
+          if (link && !link.closest('.has-dropdown')) {
+            toggleMenu();
+          } else if (link && link.closest('.projects-dropdown')) {
+            toggleMenu();
+          }
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') {
+            var nav = document.getElementById('navLinks');
+            if (nav && nav.classList.contains('active')) toggleMenu();
+          }
+        });
+
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 992) {
+            var nav = document.getElementById('navLinks');
+            var overlay = document.getElementById('mobileNavOverlay');
+            if (nav && nav.classList.contains('active')) nav.classList.remove('active');
+            if (overlay && overlay.classList.contains('open')) overlay.classList.remove('open');
+            if (document.body.classList.contains('mobile-menu-open')) document.body.classList.remove('mobile-menu-open');
+          }
+        });
+      })();
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var navBtn = document.querySelector('.nav-btn');
+        if (navBtn) {
+          navBtn.addEventListener('click', function(e) {
+            var href = navBtn.getAttribute('href');
+            if (href && href.startsWith('#')) {
+              e.preventDefault();
+              var target = document.querySelector(href);
+              if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+              }
+            }
+            var navLinks = document.getElementById('navLinks');
+            var overlay = document.getElementById('mobileNavOverlay');
+            var body = document.body;
+            if (navLinks && navLinks.classList.contains('active')) {
+              navLinks.classList.remove('active');
+              if (overlay) overlay.classList.remove('open');
+              if (body) body.classList.remove('mobile-menu-open');
+            }
+          });
+        }
+
+        var navLinksAnchors = document.querySelectorAll('.nav-links li a');
+        navLinksAnchors.forEach(function(link) {
+          link.addEventListener('click', function() {
+            var navLinks = document.getElementById('navLinks');
+            var overlay = document.getElementById('mobileNavOverlay');
+            var body = document.body;
+            if (navLinks && navLinks.classList.contains('active')) {
+              navLinks.classList.remove('active');
+              if (overlay) overlay.classList.remove('open');
+              if (body) body.classList.remove('mobile-menu-open');
+            }
+          });
+        });
+      });
+    </script>
     <script src="js/script.js"></script>
 
     <!-- form submit -->
