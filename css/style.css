@@ -8935,15 +8935,7 @@ Section Title
   display: block;
   position: relative;
 }
-.contact-section .contact-list:first-child:after {
-  background-color: var(--theme-color2);
-  content: "";
-  height: 75px;
-  position: absolute;
-  right: -40px;
-  top: 15px;
-  width: 1px;
-}
+
 @media (max-width: 1199.98px) {
   .contact-section .contact-list:first-child:after {
     display: none;
@@ -13559,7 +13551,7 @@ input::-ms-input-placeholder {
   transition: all 500ms ease;
 }
 .contact-details__info li .text span {
-  font-size: 20px;
+  font-size: 18px;
   color: var(--notech-black);
 }
 .contact-details__info li + li {
